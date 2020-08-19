@@ -16,6 +16,16 @@ void render_text(std::string text) {
         return;      
     }
 
+    FT_Face face;
+    std::string font = "font/fonts/RobotoTTF/Roboto-Medium.ttf";
+    if (FT_New_Face(ft, font.c_str(), 0, &face))
+    {
+        system("pwd"); // /home/sky/.cache/bazel/_bazel_sky/678246a894fb1bb538db37444cf9b9d5/sandbox/linux-sandbox/392/execroot/__main__/bazel-out/k8-fastbuild/bin/font/render/render_text_test.runfiles/__main__
+        // https://learnopengl.com/In-Practice/Text-Rendering
+        std::cout << "ERROR::FREETYPE: Failed to load font: " << font << std::endl;  
+        return;
+    }
+
 
     std::cout << text << std::endl;
 }
