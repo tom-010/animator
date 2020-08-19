@@ -13,5 +13,6 @@ cc_test(
     deps = [
         "//font/render:render_text",
         "@gtest//:gtest_main",
+        "@org_freetype_freetype2//:freetype2",
     ],
 )
