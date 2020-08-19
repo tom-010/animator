@@ -4,6 +4,9 @@ cc_library(
     name = "render_text",
     srcs = ["render_text.cc"],
     hdrs = ["render_text.h"],
+    deps = [
+        "@org_freetype_freetype2//:freetype2",
+    ],
     visibility = ["//visibility:public"],
 )
 
@@ -13,6 +16,5 @@ cc_test(
     deps = [
         "//font/render:render_text",
         "@gtest//:gtest_main",
-        "@org_freetype_freetype2//:freetype2",
     ],
 )
